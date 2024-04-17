@@ -38,11 +38,6 @@ const locations = [
     }
 ];
 
-const cat = {
-    name: "Whiskers",
-    "Number of legs" : 4
-};
-console.log(cat);
 
 //initialize buttons
 
@@ -69,7 +64,7 @@ function goStore() {
 }
 
 function goCave() {
-    console.log("Going to cave.");
+    update(locations[2]);
 }
 
 function fightDragon() {
@@ -77,7 +72,12 @@ function fightDragon() {
 }
 
 function buyHealth() {
-
+    if (gold >= 10) {
+        gold -= 10;
+        health += 10;
+        healthText.innerText = health
+        goldText.innerText = gold
+    }
 }
 
 function buyWeapon() {
